@@ -1,0 +1,34 @@
+--- a/smali/com/xifeng/music/ui/screens/as.smali
++++ b/smali/com/xifeng/music/ui/screens/as.smali
+@@ -149,23 +149,14 @@
+     :cond_1
+     invoke-static {p1}, Landroid/support/v4/media/session/h;->aq(Ljava/lang/Object;)V
+ 
+-    .line 29
+-    sget-object p1, Lcom/xifeng/music/network/AnnouncementService;->a:Lcom/xifeng/music/network/AnnouncementService;
+-
+-    .line 31
+-    iput v2, p0, Lcom/xifeng/music/ui/screens/as;->f:I
+-
+-    .line 33
+-    invoke-virtual {p1, p0}, Lcom/xifeng/music/network/AnnouncementService;->getAnnouncement-IoAF18A(Lkotlin/coroutines/d;)Ljava/lang/Object;
+-
+-    .line 36
+-    move-result-object p1
+-
+-    .line 37
+-    if-ne p1, v0, :cond_2
+-
+-    .line 39
+-    return-object v0
++    .line 31
++    iput v2, p0, Lcom/xifeng/music/ui/screens/as;->f:I
++
++    .line 33
++    sget-object p1, Lkotlin/z;->a:Lkotlin/z;
++
++    .line 39
++    return-object p1
+ 
+     .line 40
+     :cond_2
