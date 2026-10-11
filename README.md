@@ -51,13 +51,12 @@ donggua-music-gpl/
 |---|------|------|
 | 1 | 移除远程公告与强制更新弹窗（直接短路网络请求，不再发起调用及其副作用） | `patches/.../as.smali.patch` |
 | 2 | 新增首启免责声明弹窗：10 秒阅读倒计时、「不再显示 / 关闭」双按钮、二次分发声明与开发者头像 | `src/.../Disclaimer.java` |
-| 3 | 重写「关于我们」页面：真实应用 Logo、三名开发者头像与署名；移除原生联系方式、小程序入口、打赏与侵权说明 | `src/.../AboutActivity.java` |
+| 3 | 重写「关于我们」页面：真实应用 Logo、三名开发者头像与署名；移除原生联系方式、小程序入口 | `src/.../AboutActivity.java` |
 | 4 | 设置页「反馈BUG」改为唤起系统邮箱，收件人 `hjl1357275420@hotmail`，自动带上版本号与设备信息 | `src/.../Guard.java` |
 | 5 | 首页折叠态顶部按钮改为唤起系统浏览器打开 <https://github.com/BaiX-sudo> | `src/.../Guard.java` |
 | 6 | 修正被接管控件的手势判定：滑动与长按不再误触发跳转，恢复正常的按压高亮与列表滚动 | `src/.../Guard.java` |
 | 7 | 注入入口：在 `App.onCreate` 末尾安装上述两个新类 | `patches/.../App.smali.patch` |
 | 8 | 注册新 Activity：`com.xifeng.music.xifeng.AboutActivity` | `docs/MODIFICATIONS.md` |
-| 9 | 提供三名开发者的头像资源 | `res/drawable/avatar_*.png` |
 
 每一处的具体位置、实现原理和注意事项见 [docs/MODIFICATIONS.md](docs/MODIFICATIONS.md)。
 
@@ -95,8 +94,6 @@ java -jar apktool-3.0.3.jar d -f 冬瓜音乐_1.0.7.apk -o decoded
 |---|---|
 | 系统 | Android 14（SDK 34） |
 | 架构 | `arm64-v8a` |
-| 分辨率 / 密度 | 720 × 1612 / 272 dpi |
-| 设备 | 荣耀 JDY-AN00 |
 
 验证项包括：两个接管控件的点击、滑动、长按三种手势；反馈邮箱唤起；关于我们页面跳转；折叠态按钮唤起浏览器并正确加载 GitHub 页面。
 
