@@ -73,19 +73,8 @@ patch -p1 -d decoded < patches/com/xifeng/music/ui/screens/as.smali.patch
 
 ---
 
-## 5. 复制头像资源
 
-三名开发者的头像已随仓库提供，直接复制到解包目录的资源目录即可：
-
-```powershell
-Copy-Item "<repo>\res\drawable\avatar_*.png" "decoded\res\drawable\" -Force
-```
-
-圆形裁切由代码侧的遮罩完成，不需要预先做成圆形图片。
-
----
-
-## 6. 把三个 Java 文件编成 classes3.dex
+## 5. 把三个 Java 文件编成 classes3.dex
 
 原包已含 `classes.dex`、`classes2.dex`，新增代码作为第三个 dex 注入。
 
